@@ -20,11 +20,12 @@
     // Load Modules
     "include": [
         "~/.config/ml4w/settings/waybar-quicklinks.json",
-        "~/.config/waybar/modules.json"
+        "~/.config/waybar/modules.json",
+        "~/.config/waybar/custom-modules.json"
     ],
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
+        "custom/user",
         "group/links",
         "group/settings",
         //"wlr/taskbar",
