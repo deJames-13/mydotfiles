@@ -1,0 +1,18 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "name": "yae",
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+    "exclusive": false,
+    "passthrough": true,
+    "include": [
+        "~/dotfiles/waybar/widgets/modules.json"
+    ],
+    "modules-right": [
+        "custom/greetings",
+        "custom/yae"
+    ]
+}

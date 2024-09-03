@@ -1,0 +1,23 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "name": "my-widgets",
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+    "exclusive": false,
+    "passthrough": false,
+    "include": [
+        "~/dotfiles/waybar/widgets/modules.json"
+    ],
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+        "group/dock"
+    ],
+    "modules-right": [
+        "custom/schedimage"
+    ]
+}

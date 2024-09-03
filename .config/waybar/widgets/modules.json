@@ -1,0 +1,125 @@
+{
+    "clock": {
+        "interval": 1,
+        "format": "{:%a \n%d %b, %Y\n%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M}"
+    },
+    "custom/music": {
+        "format": "{icon}{}",
+        "format-icons": {
+            "Paused": " ",
+            "Stopped": "&#x202d;ﭥ "
+        },
+        "escape": true,
+        "tooltip": true,
+        "exec": "$HOME/.config/hypr/scripts/caway.sh -b 16",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "on-click-right": "g4music",
+        "max-length": 40
+    },
+    "custom/text": {
+        "format": "<span id='test'>hello</span>",
+        "exec": "$HOME/.config/waybar/scripts/custom-clock.sh",
+        "return-type": "json"
+    },
+    "custom/yae": {
+        "format": " ",
+        "on-click": "~/.config/rofi/launchers/type-3/launcher.sh",
+        "tooltip": false
+    },
+    "custom/schedimage": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/greetings": {
+        "format": "Hello, dej!",
+        "on-click": "~/.config/rofi/launchers/type-3/launcher.sh",
+        "tooltip": false
+    },
+    // EXTENSIONS
+    "custom/youtube": {
+        "format": " {}",
+        "exec": "python ~/private/youtube.py",
+        "restart-interval": 600,
+        "on-click": "chromium https://studio.youtube.com",
+        "tooltip": false
+    }, // Updates Count
+    "custom/updates": {
+        "format": "  {}",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/dotfiles/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+        "on-click-right": "~/dotfiles/.settings/software.sh",
+        "tooltip": false
+    },
+    // Wallpaper
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
+        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
+        "tooltip": false
+    },
+    // Waybar Themes
+    "custom/waybarthemes": {
+        "format": "",
+        "on-click": "~/dotfiles/waybar/themeswitcher.sh",
+        "tooltip": false
+    },
+    // Filemanager Launcher
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "~/dotfiles/.settings/filemanager.sh",
+        "tooltip": false
+    },
+    // Settings
+    "custom/settings": {
+        "format": " ",
+        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
+        "tooltip": false
+    },
+    // Keybindings
+    "custom/keybindings": {
+        "format": "",
+        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
+        "tooltip": false
+    },
+    // Filemanager Launcher
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "~/dotfiles/.settings/filemanager.sh",
+        "tooltip": false
+    },
+    // Browser Launcher
+    "custom/browser": {
+        "format": "",
+        "on-click": "~/dotfiles/.settings/browser.sh",
+        "tooltip": false
+    },
+    // ChatGPT Launcher
+    "custom/chatgpt": {
+        "format": " ",
+        "on-click": "xdg-open https://gemini.google.com",
+        "tooltip": false
+    },
+    "group/dock": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/waybarthemes",
+            "custom/filemanager",
+            "custom/browser",
+            "custom/wallpaper",
+            "custom/settings",
+            "custom/keybindings"
+        ]
+    }
+}

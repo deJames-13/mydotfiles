@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../waybar"
+    },
+    {
+      "path": "../cava"
+    },
+    {
+      "path": "../rofi"
+    },
+    {
+      "path": "../wlogout"
+    },
+    {
+      "path": "../../archlinux-data/vscode theme"
+    }
+  ],
+  "settings": {
+    "wallpaperTheme.jsonFilePath": "/home/dejames/.cache/wal/colors.json"
+  }
+}
