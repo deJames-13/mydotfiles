@@ -52,7 +52,7 @@
       "(.*) Microsoft Teams": "$1"
     },
     "format": "| {}",
-    "max-width": 10,
+    "max-length": 50,
     "separate-outputs": true
   },
   // ML4W Welcome App
