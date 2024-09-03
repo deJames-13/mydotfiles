@@ -9,13 +9,10 @@
     "exclusive": false,
     "passthrough": false,
     "include": [
-        "~/dotfiles/waybar/widgets/modules.json"
+        "~/dotfiles/.config/waybar/widgets/modules.json"
     ],
     "modules-left": [
         "clock"
-    ],
-    "modules-center": [
-        "group/dock"
     ],
     "modules-right": [
         "custom/schedimage"

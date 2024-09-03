@@ -14,7 +14,7 @@ if [ -f "$PIDFILE" ]; then
 fi
 
 # Start a new waybar process and store its PID
-waybar -c ~/dotfiles/waybar/widgets/my-widgets/config -s ~/dotfiles/waybar/widgets/my-widgets/style.css &
+waybar -c ~/dotfiles/.config/waybar/widgets/my-widgets/config -s ~/dotfiles/.config/waybar/widgets/my-widgets/style.css &
 NEWPID=$!
 echo $NEWPID > "$PIDFILE"
 
