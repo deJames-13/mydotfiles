@@ -21,6 +21,7 @@ plugins=(
     copyfile
     copybuffer
     dirhistory
+    npm
 )
 
 # Set-up oh-my-zsh

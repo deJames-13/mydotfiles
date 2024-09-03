@@ -1,0 +1,3 @@
+gitpush(){}
+setmonitormode(){}
+setmanagemode(){}
