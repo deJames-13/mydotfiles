@@ -3,7 +3,7 @@
         // START APPS LABEL
         "format": " ",
         // END APPS LABEL
-        "on-click": "/home/dejames/dotfiles/.config/rofi-theme/launchers/type-5/launcher.sh",
+        "on-click": "/home/dejames/dotfiles/.config/rofi-theme/launchers/type-3/launcher.sh",
         "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
     }
