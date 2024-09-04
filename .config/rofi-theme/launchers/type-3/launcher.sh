@@ -16,4 +16,4 @@ theme='style-2'
 ## Run
 rofi \
     -show drun \
-    -theme ${dir}/${theme}.rasi -hover-select
+    -theme ${dir}/${theme}.rasi -hover-select -scroll-method 0
