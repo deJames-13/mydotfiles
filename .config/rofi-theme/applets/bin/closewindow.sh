@@ -5,6 +5,11 @@ source "$HOME"/dotfiles/.config/rofi-theme/applets/shared/theme.bash
 theme="$type/$style"
 yes=''
 no=''
+
+include=(
+	"code"
+)
+
 confirm_cmd() {
 	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 350px;}' \
 		-theme-str 'mainbox {orientation: vertical; children: [ "message", "listview" ];}' \

@@ -14,3 +14,10 @@ y = 15
 
 [selection]
 save_to_clipboard = true
+
+
+# keyboard bindings
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control", action = "SpawnNewInstance" },
+]
