@@ -6,12 +6,12 @@
 # oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # -----------------------------------------------------
 # ZSH_THEME=robbyrussell
-
 # -----------------------------------------------------
 # oh-myzsh plugins
 # -----------------------------------------------------
 plugins=(
     git
+    autocomplete
     sudo
     web-search
     archlinux
@@ -26,6 +26,7 @@ plugins=(
 
 # Set-up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+zstyle ':completion:*' insert-tab false
 
 # -----------------------------------------------------
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
