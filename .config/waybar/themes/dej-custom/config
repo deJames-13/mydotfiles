@@ -26,21 +26,23 @@
     // Modules Left
     "modules-left": [
         "custom/user",
-        "group/links",
-        "group/settings",
-        //"wlr/taskbar",
-        "group/quicklinks",
-        "custom/updates",
-        "hyprland/workspaces"
-    ],
-    // Modules Center
-    "modules-center": [
+        "clock",
+        // "group/links",
+        // "group/settings",
+        "wlr/taskbar",
+        // "group/quicklinks",
+        "hyprland/workspaces",
         "hyprland/window",
     ],
+    // Modules Center
+    // "modules-center": [
+    //     "hyprland/workspaces",
+    // ],
     // Modules Right    
     "modules-right": [
+        "custom/updates",
+        "backlight",
         "pulseaudio",
-        // "backlight",
         "bluetooth",
         "battery",
         "network",
@@ -49,6 +51,5 @@
         "tray",
         "custom/exit",
         "custom/ml4w-welcome",
-        "clock"
     ]
 }
