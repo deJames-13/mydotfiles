@@ -1,4 +1,4 @@
 ## Current Theme
 
-type="$HOME/.config/rofi/applets/type-2"
+type="$HOME/dotfiles/.config/rofi-theme/applets/type-2"
 style='style-1.rasi'

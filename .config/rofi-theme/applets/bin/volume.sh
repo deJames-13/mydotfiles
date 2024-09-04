@@ -6,7 +6,7 @@
 ## Applets : Volume
 
 # Import Current Theme
-source "$HOME"/.config/rofi/applets/shared/theme.bash
+source "$HOME"/dotfiles/.config/rofi-theme/applets/shared/theme.bash
 theme="$type/$style"
 
 # Volume Info

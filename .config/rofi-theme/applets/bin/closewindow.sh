@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Confirmation CMD
 
-source "$HOME"/.config/rofi/applets/shared/theme.bash
+source "$HOME"/dotfiles/.config/rofi-theme/applets/shared/theme.bash
 theme="$type/$style"
 yes=''
 no=''
@@ -14,7 +14,9 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${theme} -hover-select
+		-theme ${theme} \
+		-hover-select -scroll-method 0
+
 }
 # Ask for confirmation
 confirm_exit() {
