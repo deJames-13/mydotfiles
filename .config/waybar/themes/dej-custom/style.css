@@ -66,14 +66,17 @@ window#waybar {
 #workspaces button.active {
     color: @textcolor1;
     background: @workspacesbackground2;
+    border: 1px solid @backgroundlight;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
+    border-radius: 1px;
     opacity:1.0;
 }
 
 #workspaces button:hover {
     color: @textcolor1;
     background: @workspacesbackground2;
+    border: 1px solid @backgroundlight;
     border-radius: 1px;
     opacity:0.7;
 }
@@ -83,7 +86,7 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-    border-radius: 10px;
+    border-radius: 1px;
     background-color: @backgroundlight;
     opacity:0.8;
     padding:20px;
