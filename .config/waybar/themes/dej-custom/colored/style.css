@@ -13,4 +13,11 @@
 @define-color textcolor3 #FFFFFF;
 @define-color iconcolor #FFFFFF;
 
+@define-color gradient1 @color15;
+@define-color gradient2 @color14;
+@define-color gradient3 @color13;
+@define-color gradient4 @color12;
+@define-color gradient5 @color11;
+@define-color gradient6 @color10;
+
 @import '../style.css';

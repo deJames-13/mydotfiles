@@ -90,7 +90,8 @@ confirm_run () {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		sleep 1; swaylock;
+		# sleep 1; swaylock;
+		sleep 1; hyprlock;
 	elif [[ "$1" == '--opt2' ]]; then
 		confirm_run 'kill -9 -1'
 	elif [[ "$1" == '--opt3' ]]; then
