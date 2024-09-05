@@ -40,15 +40,25 @@ confirm_run () {
 
 # Close the window
 close_window() {
-	# check first if there is an active window on focus
+
 	active="$(hyprctl activewindow |awk '/pid:/ {print $2}')"
-	echo $active
-	if [[ -n "$active" ]]; then
-		confirm_run "hyprctl dispatch killactive"
-	else 
+	title="$(hyprctl activewindow |awk -F': ' '/initialTitle:/ {print $2}')"
+
+
+	if [[ -z "$active" ]]; then
 		notify-send -t 500 "No active window to close"
+		exit
 	fi
+
+	if [[ "$1" == "-f" ]]; then
+		hyprctl dispatch killactive
+	else 
+		confirm_run "hyprctl dispatch killactive"
+	fi
+
+
+	notify-send -t 500 "Terminated: $title"
 }
 
 
-close_window
+close_window "$@"
