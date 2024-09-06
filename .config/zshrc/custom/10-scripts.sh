@@ -24,3 +24,9 @@ setmanagemode(){
     systemctl restart dhcpcd
     iwconfig
 }
+
+banner(){
+    text=${1:-"archbtw"}
+    color=${2:-34}
+    figlet -f smslant "$text" | sed "s/^/\x1b[${color}m/"
+}

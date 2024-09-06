@@ -3,17 +3,6 @@
 # -----------------------------------------------------
 
 # -----------------------------------------------------
-# Scripts
-# -----------------------------------------------------
-alias monitorwlp0s20f3="setmonitormode wlp0s20f3"
-alias managewlp0s20f3="setmanagemode wlp0s20f3"
-alias yaycore="yay -Syu --noconfirm --needed --clean"
-alias yayextra="yay -Syu --noconfirm --needed --clean --ignoregroup extra --ignoregroup multilib"
-alias yayremove="yay -Rns --noconfirm --clean"
-alias yayclean="yay -Sc --noconfirm"
-alias yayupdate="yay -Syu --noconfirm --clean"
-
-# -----------------------------------------------------
 # General
 # -----------------------------------------------------
 alias c='clear'
