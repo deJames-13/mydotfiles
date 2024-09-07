@@ -581,6 +581,23 @@ window#waybar.empty #window {
 
 /* CUSTOM */
 
+/* Recording icons */
+#custom-wf-recorder,
+#custom-obsrecorder,
+#custom-recorder {
+  background-color: @backgroundlight;
+  border-radius: 1px;
+  padding: 2px 10px 2px 10px;
+  margin: 8px 10px 8px 10px;
+  opacity: 0.8;
+  box-shadow: 2px 2px 0px @iconcolor;
+  color: #c9545d;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
 #workspaces,
 #window,
@@ -594,7 +611,10 @@ window#waybar.empty #window {
 #pulseaudio,
 #network,
 #bluetooth, #bluetooth.on, #bluetooth.connected,
-#battery
+#battery,
+#custom-wf-recorder,
+#custom-obsrecorder,
+#custom-recorder
 {
     transition: all 0.3s ease-in-out;
 }
@@ -608,7 +628,10 @@ window#waybar.empty #window {
 #pulseaudio:hover,
 #network:hover,
 #bluetooth:hover, #bluetooth.on:hover, #bluetooth.connected:hover,
-#battery:hover
+#battery:hover,
+#custom-wf-recorder:hover,
+#custom-obsrecorder:hover,
+#custom-recorder:hover
 {
     box-shadow: 0px 0px 0px @iconcolor;
     border: 1px solid @bordercolor;

@@ -59,7 +59,7 @@
         "tooltip-format": "Open filemanager"
     },
     "custom/codeeditor": {
-        "format": "",
+        "format": "󰨞",
         "on-click": "cursor",
         "tooltip-format": "Open Code Editor"
     },
