@@ -1,4 +1,8 @@
 {
+    "include": [
+        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json"
+    ],
     "clock": {
         "interval": 1,
         "format": "{:%a \n%d %b, %Y\n%H:%M}",
@@ -31,7 +35,7 @@
     },
     "custom/yae": {
         "format": " ",
-        "on-click": "~/dotfiles/.config/rofi-theme/launchers/type-3/launcher.sh",
+        "on-click": "~/dotfiles/.config/ml4w/.config/rofi-theme/launchers/type-3/launcher.sh",
         "tooltip": false
     },
     "custom/schedimage": {
@@ -40,86 +44,36 @@
     },
     "custom/greetings": {
         "format": "Hello, dej!",
-        "on-click": "~/dotfiles/.config/rofi-theme/launchers/type-3/launcher.sh",
+        "on-click": "~/dotfiles/.config/ml4w/.config/rofi-theme/launchers/type-3/launcher.sh",
         "tooltip": false
     },
-    // EXTENSIONS
-    "custom/youtube": {
-        "format": " {}",
-        "exec": "python ~/private/youtube.py",
-        "restart-interval": 600,
-        "on-click": "chromium https://studio.youtube.com",
-        "tooltip": false
-    }, // Updates Count
-    "custom/updates": {
-        "format": "  {}",
-        "tooltip-format": "{}",
-        "escape": true,
-        "return-type": "json",
-        "exec": "~/dotfiles/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
-        "on-click-right": "~/dotfiles/.settings/software.sh",
-        "tooltip": false
-    },
-    // Wallpaper
-    "custom/wallpaper": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
-        "tooltip": false
-    },
-    // Waybar Themes
-    "custom/waybarthemes": {
-        "format": "",
-        "on-click": "~/dotfiles/waybar/themeswitcher.sh",
-        "tooltip": false
-    },
-    // Filemanager Launcher
-    "custom/filemanager": {
-        "format": "",
-        "on-click": "~/dotfiles/.settings/filemanager.sh",
-        "tooltip": false
-    },
-    // Settings
-    "custom/settings": {
-        "format": " ",
-        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
-        "tooltip": false
-    },
-    // Keybindings
-    "custom/keybindings": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
-        "tooltip": false
-    },
-    // Filemanager Launcher
-    "custom/filemanager": {
-        "format": "",
-        "on-click": "~/dotfiles/.settings/filemanager.sh",
-        "tooltip": false
-    },
-    // Browser Launcher
+    // Quicklinks
     "custom/browser": {
-        "format": "",
-        "on-click": "~/dotfiles/.settings/browser.sh",
-        "tooltip": false
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/browser.sh",
+        "tooltip-format": "Open Browser"
     },
-    // ChatGPT Launcher
-    "custom/chatgpt": {
-        "format": " ",
-        "on-click": "xdg-open https://gemini.google.com",
-        "tooltip": false
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/filemanager.sh",
+        "tooltip-format": "Open filemanager"
+    },
+    "custom/codeeditor": {
+        "format": "",
+        "on-click": "cursor",
+        "tooltip-format": "Open Code Editor"
     },
     "group/dock": {
         "orientation": "horizontal",
         "modules": [
-            "custom/waybarthemes",
+            "custom/appmenuicon",
             "custom/filemanager",
+            "custom/codeeditor",
             "custom/browser",
             "custom/wallpaper",
             "custom/settings",
-            "custom/keybindings"
+            "custom/keybindings",
+            "custom/waybarthemes"
         ]
     }
 }

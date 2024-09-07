@@ -46,6 +46,12 @@
   padding: 700px 10px 0 0;
   border-right: 2px solid white;
   transition: all 0.3s ease-in-out;
+
+  /* shown */
+  background-image: url('../assets/sched.png');
+  padding: 700px 440px 0 0;
+  border-right: 2px solid @color1;
+  /* shown */
 }
 
 #custom-schedimage:hover {
@@ -59,15 +65,14 @@
   border-right: 2px solid @color1;
 }
 
-#custom-chatgpt,
-#custom-filemanager,
 #custom-browser,
+#custom-filemanager,
 #custom-settings,
 #custom-keybindings,
 #custom-waybarthemes,
 #custom-wallpaper,
-#custom-appmenu,
-#custom-appmenuwlr {
+#custom-codeeditor,
+#custom-appmenuicon {
   font-size: 18px;
   color: @textcolor1;
   border-radius: 1px;
@@ -75,22 +80,29 @@
   margin: 4px 8px;
   opacity: 0.8;
 }
-#custom-chatgpt:hover,
 #custom-filemanager:hover,
 #custom-browser:hover,
 #custom-settings:hover,
 #custom-keybindings:hover,
 #custom-waybarthemes:hover,
 #custom-wallpaper:hover,
-#custom-appmenu:hover,
-#custom-appmenuwlr:hover{ 
-  color: @color5;
+#custom-codeeditor:hover,
+#custom-appmenuicon:hover
+{ 
+  color: @color1;
+}
+#custom-appmenuicon {
+  color: #6666FF;
 }
 
 #dock {
-  margin: 770px 0 10px 0;
+  margin: 770px 0 0px 0;
   padding: 10px;
-  border: 2px solid white;
-  background-color: @workspacesbackground1;
+  background-color: @color11;
+  background-image: url('../assets/blurred_sweetarch.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px 10px 0 0;
   transition: all 0.3s ease-in-out;
 }
