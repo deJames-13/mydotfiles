@@ -48,9 +48,9 @@
   transition: all 0.3s ease-in-out;
 
   /* shown */
-  background-image: url('../assets/sched.png');
+  /* background-image: url('../assets/sched.png');
   padding: 700px 440px 0 0;
-  border-right: 2px solid @color1;
+  border-right: 2px solid @color1; */
   /* shown */
 }
 
