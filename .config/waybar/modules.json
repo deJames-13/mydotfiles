@@ -189,8 +189,9 @@
   },
   // Clock
   "clock": {
-    "format": "{:%H:%M %a}",
+    "format": "{:%H:%M:%S %a}",
     "on-click": "ags -t calendar",
+    "interval": 1,
     "tooltip": false
   },
   // System
