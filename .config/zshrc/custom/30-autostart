@@ -10,6 +10,8 @@ cat ~/.cache/wal/sequences
 # -----------------------------------------------------
 # Fastfetch
 # -----------------------------------------------------
+clear
+
 if [[ $(tty) == *"pts"* ]]; then
     banner "archbtw!" 33
     fastfetch --config examples/13

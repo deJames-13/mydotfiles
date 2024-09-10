@@ -1,11 +1,11 @@
-gitpush(){
+gitpush() {
     message=${@:-$(date)}
 
     git add .
     git commit -m "$message"
     git push
 }
-setmonitormode(){
+setmonitormode() {
     interface=${1:-wlan0}
     airmon-ng check kill
     ifconfig $interface down
@@ -14,7 +14,7 @@ setmonitormode(){
     echo "Interface $interface set to monitor mode"
     iwconfig
 }
-setmanagemode(){   
+setmanagemode() {
     interface=${1:-wlan0}
     ifconfig $interface down
     iwconfig $interface mode managed
@@ -25,7 +25,7 @@ setmanagemode(){
     iwconfig
 }
 
-banner(){
+banner() {
     text=${1:-"archbtw"}
     color=${2:-34}
     figlet -f smslant "$text" | sed "s/^/\x1b[${color}m/"
