@@ -1,5 +1,7 @@
 if [ "$1" = "-alt" ]; then
-    code
-else
+    # code
     cursor
+else
+    # cursor
+    code
 fi
