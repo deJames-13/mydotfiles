@@ -60,7 +60,7 @@
     },
     "custom/codeeditor": {
         "format": "󰨞",
-        "on-click": "cursor",
+        "on-click": "~/.config/ml4w/settings/codeeditor.sh",
         "tooltip-format": "Open Code Editor"
     },
     "group/dock": {

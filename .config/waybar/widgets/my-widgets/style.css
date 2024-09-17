@@ -39,29 +39,29 @@
 }
 
 #custom-schedimage {
-  margin: 60px 0;
+  margin: 100px 0 20px 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 700px 10px 0 0;
+  padding: 500px 10px 0 0;
   border-right: 2px solid white;
   transition: all 0.3s ease-in-out;
 
   /* shown */
   /* background-image: url('../assets/sched.png');
-  padding: 700px 440px 0 0;
+  padding: 500px 440px 0 0;
   border-right: 2px solid @color1; */
   /* shown */
 }
 
 #custom-schedimage:hover {
   background-image: url('../assets/sched.png');
-  padding: 700px 440px 0 0;
+  padding: 500px 440px 0 0;
   border-right: 2px solid @color1;
 }
 #custom-schedimage:active {
   background-image: url('../assets/sched.png');
-  padding: 700px 440px 0 0;
+  padding: 500px 440px 0 0;
   border-right: 2px solid @color1;
 }
 
