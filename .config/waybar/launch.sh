@@ -61,4 +61,4 @@ fi
 waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
 
 # -----------------------------------------------------
-exec /home/dejames/dotfiles/.config/waybar/widgets/my-widgets/launch.sh &
+# exec /home/dejames/dotfiles/.config/waybar/widgets/my-widgets/launch.sh &
