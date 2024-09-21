@@ -30,3 +30,8 @@ banner() {
     color=${2:-34}
     figlet -f smslant "$text" | sed "s/^/\x1b[${color}m/"
 }
+
+ai(){
+    local args="$@"
+    tgpt $args
+}

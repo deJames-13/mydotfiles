@@ -7,20 +7,21 @@ gitpush(){
 }
 setmonitormode(){
     interface=${1:-wlan0}
-    airmon-ng check kill
-    ifconfig $interface down
-    iwconfig $interface mode monitor
-    ifconfig $interface up
+    sudo airmon-ng check kill
+    sudo ifconfig $interface down
+    sudo iwconfig $interface mode monitor
+    sudo ifconfig $interface up
     echo "Interface $interface set to monitor mode"
-    iwconfig
+    sudo iwconfig
 }
 setmanagemode(){   
     interface=${1:-wlan0}
-    ifconfig $interface down
-    iwconfig $interface mode managed
-    ifconfig $interface up
+    sudo ifconfig $interface down
+    sudo iwconfig $interface mode managed
+    sudo ifconfig $interface up
     echo "Interface $interface set to managed mode"
-    systemctl restart NetworkManager
-    systemctl restart dhcpcd
+    sudo systemctl restart NetworkManager
+    sudo systemctl restart dhcpcd
     iwconfig
 }
+

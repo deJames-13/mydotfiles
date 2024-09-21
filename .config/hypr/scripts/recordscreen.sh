@@ -1,5 +1,6 @@
 NAME="screenrecord_$(date +%d%m%Y_%H%M%S).mp4"
 FILE="$HOME/Videos/recordings/$NAME"
+SCREENRECORDER=wf-recorder
 
 mic="alsa_output.pci-0000_00_1f.3.analog-stereo.monitor"
 option2="Fullscreen with audio (delay 3s)"
@@ -14,10 +15,10 @@ option10="Select Microphone"
 options="$option2\n$option8\n$option3\n$option4\n$option5\n$option6\n$option7\n$option9\n$option10"
 
 stoprecording() {
-    killall -s SIGINT wf-recorder
-    while [ ! -z $(pgrep -x wf-recorder) ]; do wait; done
+    killall -s SIGINT $SCREENRECORDER
+    while [ ! -z $(pgrep -x $SCREENRECORDER) ]; do wait; done
     notify-send -t 1000 "Recording Stopped"
-    notify-send -t 1000 "Saved at: $FILE"
+    notify-send -t 1000 "Saved at: $FILE" 
 }
 
 setmic() {
@@ -63,15 +64,15 @@ choose_modes() {
     $option10) setmic ;;
     $option2)
         delay 3 "Fullscreen with audio (delay 3s)"
-        wf-recorder -a --muxer=mp4 --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a --muxer=mp4 --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f $FILE >/dev/null 2>&1 &
         ;;
     $option8)
         delay 3 "Fullscreen with mic audio (delay 3s)"
-        wf-recorder -a --muxer=mp4 --audio=$mic -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a --muxer=mp4 --audio=$mic -f $FILE >/dev/null 2>&1 &
         ;;
     $option3)
         notify-send -t 1000 "Screen Record starting... Mode: Selection"
-        wf-recorder -a -g "$(slurp)" --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a -g "$(slurp)" --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f $FILE >/dev/null 2>&1 &
         ;;
     $option4)
         curmic="bluez_output.41_42_12_58_FB_1B.1.monitor"
@@ -79,7 +80,7 @@ choose_modes() {
             notify-send -t 1000 "Bluetooth mic not found."
         else
             delay 3 "Fullscreen with bluetooth audio (delay 3s)"
-            wf-recorder -a --muxer=mp4 --audio=$curmic -f $FILE >/dev/null 2>&1 &
+            $SCREENRECORDER -a --muxer=mp4 --audio=$curmic -f $FILE >/dev/null 2>&1 &
         fi
         ;;
     $option5)
@@ -88,23 +89,23 @@ choose_modes() {
         if [ -z $(pactl list sources | grep "$curmic") ]; then
             notify-send -t 1000 "Bluetooth mic not found."
         else
-            wf-recorder -a --muxer=mp4 --audio=$curmic -f $FILE >/dev/null 2>&1 &
+            $SCREENRECORDER -a --muxer=mp4 --audio=$curmic -f $FILE >/dev/null 2>&1 &
         fi
         ;;
     $option6)
         delay 3 "Fullscreen No Audio (delay 3s)"
-        wf-recorder -a -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a -f $FILE >/dev/null 2>&1 &
         ;;
     $option7)
         notify-send -t 1000 "Screen Record starting... Mode: Selection No Audio"
-        wf-recorder -a -g --muxer=mp4 "$(slurp)" -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a -g --muxer=mp4 "$(slurp)" -f $FILE >/dev/null 2>&1 &
         ;;
 
     $option9)
         region="$(slurp)"
         setmic
         delay 3 "Screen Record starting please wait... Mode: Selection With Audio"
-        wf-recorder -a -g "$region" --muxer=mp4 --audio=$mic -f $FILE >/dev/null 2>&1 &
+        $SCREENRECORDER -a -g "$region" --muxer=mp4 --audio=$mic -f $FILE >/dev/null 2>&1 &
         ;;
     esac
 }
@@ -118,7 +119,7 @@ if [ -f /tmp/WF-MIC ]; then
 
 fi
 
-if [ -z $(pgrep wf-recorder) ]; then
+if [ -z $(pgrep $SCREENRECORDER) ]; then
     notify-send -t 3000 "Current Mic: $mic"
     case $1 in
     obs) obs_toggle ;;

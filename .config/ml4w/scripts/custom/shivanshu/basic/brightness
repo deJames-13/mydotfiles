@@ -1,0 +1,74 @@
+#!/bin/bash
+#
+# Use: To change the inbulit brightness of the dispay port if it supports that.
+# Dependencies: polybar-msg
+# Description: Script to change the brightness and
+# Working: it check for the device in /sys/class/backlight
+#  to modify those values without need of sudo you have to add a udev rule
+#  read about it on archwiki(backlight)
+# Author: totoro
+
+BACKLIGHT="/sys/class/backlight/intel_backlight"
+
+BRIGHTNESS_FILE="$BACKLIGHT/brightness"
+MAX_BRIGHTNESS_FILE="$BACKLIGHT/max_brightness"
+
+CUR_BRI=$(cat "$BRIGHTNESS_FILE")
+MAX_BRI=$(cat "$MAX_BRIGHTNESS_FILE")
+
+# calculating 5 percent of max-brightness
+((STEP = MAX_BRI * 5 / 100))
+
+display_notification() {
+    local value="$1"
+    local text="$2"
+    OPTIONS=(
+        "--appname=Brightness" # Name of your application
+        "Brightness"
+        "$text \nBrightness: "
+        "--hints=int:value:$value"  # User specified hints
+        "--replace=100"             # Set id of this notification
+        "--icon=brightness-systray" # An Icon that should be displayed with the notification
+    )
+    dunstify "${OPTIONS[@]}"
+}
+
+notify_polybar() {
+    # enable ipc control to change brightness
+    if pgrep -x "polybar" >/dev/null; then
+        polybar-msg hook brightness 1
+    fi
+    sleep 0.1
+}
+
+case $1 in
+-inc)
+    ((NEW_BRI = CUR_BRI + STEP))
+    if ((NEW_BRI < MAX_BRI)); then
+        echo $NEW_BRI | tee "$BRIGHTNESS_FILE"
+        ((NEW_PER = NEW_BRI * 100 / MAX_BRI))
+    else
+        echo "$MAX_BRI" | tee "$BRIGHTNESS_FILE"
+        NEW_PER="100"
+    fi
+    display_notification "$NEW_PER" "Increase"
+    notify_polybar
+    ;;
+-dec)
+    # calculating MIN_BRI
+    ((MIN_BRI = MAX_BRI * 10 / 100))
+    ((NEW_BRI = CUR_BRI - STEP))
+    if ((NEW_BRI > MIN_BRI)); then
+        echo $NEW_BRI | tee "$BRIGHTNESS_FILE"
+    else
+        echo $MIN_BRI | tee "$BRIGHTNESS_FILE"
+    fi
+    ((NEW_PER = NEW_BRI * 100 / MAX_BRI))
+    display_notification "$NEW_PER" "Decrease"
+    notify_polybar
+    ;;
+*)
+    # display current brightness
+    echo $((CUR_BRI * 100 / MAX_BRI))
+    ;;
+esac

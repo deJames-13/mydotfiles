@@ -26,7 +26,7 @@
     },
     // Recording
     "custom/recorder": {
-        "format": " wf",
+        "format": " rec",
         "return-type": "json",
         "interval": 3,
         "exec": "echo '{\"class\": \"recording\"}'",
