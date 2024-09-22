@@ -29,36 +29,33 @@ confirm_exit() {
 }
 
 # Confirm and execute
-confirm_run () {	
+confirm_run() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
-        ${1} && ${2} && ${3}
-    else
-        exit
-    fi	
+		${1} && ${2} && ${3}
+	else
+		exit
+	fi
 }
 
 # Close the window
 close_window() {
 
-	active="$(hyprctl activewindow |awk '/pid:/ {print $2}')"
-	title="$(hyprctl activewindow |awk -F': ' '/initialTitle:/ {print $2}')"
-
+	active="$(hyprctl activewindow | awk '/pid:/ {print $2}')"
+	title="$(hyprctl activewindow | awk -F': ' '/initialTitle:/ {print $2}')"
 
 	if [[ -z "$active" ]]; then
-		notify-send -t 500 "No active window to close"
+		notify-send -t 500 -a "Window" "No active window to close"
 		exit
 	fi
 
 	if [[ "$1" == "-f" ]]; then
 		hyprctl dispatch killactive
-	else 
+	else
 		confirm_run "hyprctl dispatch killactive"
 	fi
 
-
-	notify-send -t 500 "Terminated: $title"
+	notify-send -t 500 -a "Window" "Terminated: $title"
 }
-
 
 close_window "$@"
