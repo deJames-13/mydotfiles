@@ -1,19 +1,19 @@
 #!/bin/bash
 if ! command -v mpv &>/dev/null; then
-    notify-send -u low -t 5000 "mpv could not be found, please install mpv"
+    notify-send -u low -t 5000 -a "Floating Cam" "mpv could not be found, please install mpv"
     exit 1
 fi
 
 # check if /dev/video0 exists
 if [ ! -e /dev/video0 ]; then
-    notify-send -u low -t 5000 "No webcam found"
+    notify-send -u low -t 5000 -a "Floating Cam" "No webcam found"
     exit 1
 fi
 
 # if there is title "MPV Webcam"  and class "mpv-webcam" running, kill it
 if pgrep -f "MPV Webcam" >/dev/null; then
     pkill -f "MPV Webcam"
-    notify-send -u low -t 5000 "Closed existing webcam instance"
+    notify-send -u low -t 5000 -a "Floating Cam" "Closed existing webcam instance"
     exit 0
 fi
 
@@ -60,7 +60,7 @@ choose_cam() {
         exit 1
     fi
 
-    notify-send -t 1000 "Selected: $device"
+    notify-send -t 1000 -a "Floating Cam" "Selected: $device"
 
     cam=$(echo $device | sed 's/.*:: \(\/dev\/video[0-9]*\)/\1/')
     echo $cam
@@ -72,9 +72,9 @@ test_camera() {
         exit 1
     fi
     if mpv --profile=low-latency --untimed "$cam" --geometry=100% --title="MPV Webcam" >/dev/null 2>&1; then
-        notify-send -t 1000 "Stopped: $cam"
+        notify-send -t 1000 -a "Floating Cam" "Stopped: $cam"
     else
-        notify-send -u critical -t 5000 "Selected camera is not working: $cam"
+        notify-send -u critical -t 5000 -a "Floating Cam" "Selected camera is not working: $cam"
         exit 1
     fi
 }
