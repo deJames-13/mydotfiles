@@ -39,7 +39,7 @@ window#waybar {
 
 #workspaces {
     background: @workspacesbackground1;
-    margin: 8px 2px 8px 10px;
+    margin: 8px 10px 8px 2px;
     padding: 0px 1px;
     /* modified */
     /* border-radius: 1px; */
@@ -58,7 +58,7 @@ window#waybar {
     /* border-radius: 1px; */
     border: 0px;
     color: @textcolor1;
-    background-color: @workspacesbackground2;
+    /* background-color: @workspacesbackground2; */
     transition: all 0.3s ease-in-out;
     opacity: 0.4;
 }
@@ -67,7 +67,7 @@ window#waybar {
     color: @textcolor1;
     background: @workspacesbackground2;
     border: 1px solid @backgroundlight;
-    min-width: 40px;
+    /* min-width: 40px; */
     transition: all 0.3s ease-in-out;
     /* border-radius: 1px; */
     opacity:1.0;
@@ -441,6 +441,13 @@ window#waybar.empty #window {
     margin: 8px 10px 8px 0px;
     opacity:0.8;
 }
+#bluetooth.connected {
+    color: #69ffb9;
+}
+
+#bluetooth.on {
+    color: @iconcolor;
+}
 
 #bluetooth.off {
     background-color: transparent;
@@ -465,7 +472,7 @@ window#waybar.empty #window {
 }
 
 #battery.charging, #battery.plugged {
-    color: @textcolor2;
+    color: #69ffb9;
     background-color: @backgroundlight;
 }
 

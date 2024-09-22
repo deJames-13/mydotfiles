@@ -18,7 +18,10 @@ stoprecording() {
     killall -s SIGINT $SCREENRECORDER
     while [ ! -z $(pgrep -x $SCREENRECORDER) ]; do wait; done
     notify-send -t 1000 "Recording Stopped"
-    notify-send -t 1000 "Saved at: $FILE" 
+    ctx=notify-send -t 1000 "Saved at: $FILE"
+    if [ ctx == 'yes' ]; then
+        ~/.config/ml4w/settings/filemanager.sh $FILE
+    fi
 }
 
 setmic() {

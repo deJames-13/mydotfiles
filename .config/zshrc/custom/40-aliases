@@ -9,9 +9,13 @@ alias c='clear'
 alias nf='fastfetch'
 alias pf='fastfetch'
 alias ff='fastfetch'
-alias ls='eza -a --icons'
-alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
+alias l='lsd'
+alias ls='eza --icons'
+alias la='eza -a --icons'
+alias ll='eza -l --icons'
+alias lla='eza -al --icons'
+alias lt='eza --tree --level=1 --icons'
+alias lta='eza -a --tree --level=1 --icons'
 alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias vim='$EDITOR'
@@ -58,7 +62,6 @@ alias ascii='~/.config/ml4w/scripts/figlet.sh'
 alias welcome='banner "welcome"'
 alias dejames='banner "dejames"'
 
-
 alias monitorwlp0s20f3="setmonitormode wlp0s20f3"
 alias managewlp0s20f3="setmanagemode wlp0s20f3"
 alias yaycore="yay -Syu --noconfirm --needed --clean"
@@ -66,7 +69,6 @@ alias yayextra="yay -Syu --noconfirm --needed --clean --ignoregroup extra --igno
 alias yayremove="yay -Rns --noconfirm --clean"
 alias yayclean="yay -Sc --noconfirm"
 alias yayupdate="yay -Syu --noconfirm --clean"
-
 
 # -----------------------------------------------------
 # System

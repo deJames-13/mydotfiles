@@ -29,9 +29,9 @@
         "clock",
         // "group/links",
         // "group/settings",
-        "wlr/taskbar",
         // "group/quicklinks",
         "hyprland/workspaces",
+        "wlr/taskbar",
         "hyprland/window",
     ],
     // Modules Center

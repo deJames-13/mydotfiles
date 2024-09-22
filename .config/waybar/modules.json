@@ -13,11 +13,11 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
     "format-icons": {
       "urgent": "",
-      "active": "",
-      "default": ""
+      "active": "",
+      "default": ""
     },
     "persistent-workspaces": {
       "*": 3
