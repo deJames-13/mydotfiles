@@ -22,7 +22,7 @@
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 window#waybar {
@@ -64,7 +64,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @textcolor1;
+    color: #00ffd9;
     background: @workspacesbackground2;
     border: 1px solid @backgroundlight;
     /* min-width: 40px; */
@@ -73,8 +73,9 @@ window#waybar {
     opacity:1.0;
 }
 
+
 #workspaces button:hover {
-    color: @textcolor1;
+    color: #00ffd9;
     background: @workspacesbackground2;
     border: 1px solid @backgroundlight;
     /* border-radius: 1px; */
@@ -204,6 +205,14 @@ window#waybar.empty #window {
     color: @iconcolor;
 }
 
+#custom-tools{
+    color: #007bff;
+}
+#custom-system {
+    color: #ffea00;
+
+}
+
 #custom-quicklink1,
 #custom-quicklink2,
 #custom-quicklink3,
@@ -298,8 +307,8 @@ window#waybar.empty #window {
     margin: 0px 13px 0px 0px;
     padding:0px;
     font-size:20px;
-    color: @iconcolor;
     opacity: 0.8;
+    color: #dc2f2f;
 }
 
 /* -----------------------------------------------------
@@ -416,6 +425,10 @@ window#waybar.empty #window {
     opacity:0.8;
 }
 
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
 #network.ethernet {
     background-color: @backgroundlight;
     color: @textcolor2;
@@ -469,6 +482,12 @@ window#waybar.empty #window {
     padding: 2px 15px 0px 10px;
     margin: 8px 10px 8px 0px;
     opacity:0.8;
+}
+#battery.good:not(.charging) {
+    color: #69ffb9;
+}
+#battery.warning:not(.charging) {
+    color: #f3ff69;
 }
 
 #battery.charging, #battery.plugged {
