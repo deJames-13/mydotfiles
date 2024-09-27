@@ -15,7 +15,7 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",
+      "urgent": "",
       "active": "",
       "default": ""
     },

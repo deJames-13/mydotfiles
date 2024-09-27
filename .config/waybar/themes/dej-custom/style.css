@@ -42,7 +42,6 @@ window#waybar {
     margin: 8px 10px 8px 2px;
     padding: 0px 1px;
     /* modified */
-    /* border-radius: 1px; */
     box-shadow: 2px 2px 0px @iconcolor;
     /* end modifield */
     border: 0px;
