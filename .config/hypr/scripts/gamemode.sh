@@ -20,8 +20,9 @@ gamemode()
 	touch ~/.cache/gamemode
     notify-send "Gamemode activated" "Animations and blur disabled"
 }
-
-if [ -f ~/.cache/gamemode ] ;then
+if [ $1 = "start"] ;then
+    gamemode
+elif [ -f ~/.cache/gamemode ] ;then
     hyprctl reload
     rm ~/.cache/gamemode
     notify-send "Gamemode deactivated" "Animations and blur enabled"
