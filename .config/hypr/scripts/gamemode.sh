@@ -7,11 +7,8 @@
 #
 #
 
-if [ -f ~/.cache/gamemode ] ;then
-    hyprctl reload
-    rm ~/.cache/gamemode
-    notify-send "Gamemode deactivated" "Animations and blur enabled"
-else
+gamemode() 
+{
     hyprctl --batch "\
         keyword animations:enabled 0;\
         keyword decoration:drop_shadow 0;\
@@ -22,4 +19,12 @@ else
         keyword decoration:rounding 0"
 	touch ~/.cache/gamemode
     notify-send "Gamemode activated" "Animations and blur disabled"
+}
+
+if [ -f ~/.cache/gamemode ] ;then
+    hyprctl reload
+    rm ~/.cache/gamemode
+    notify-send "Gamemode deactivated" "Animations and blur enabled"
+else
+    gamemode
 fi
