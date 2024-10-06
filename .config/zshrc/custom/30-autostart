@@ -13,8 +13,11 @@ cat ~/.cache/wal/sequences
 clear
 
 if [[ $(tty) == *"pts"* ]]; then
-    banner "archbtw!" 33
-    fastfetch --config examples/13
+    if [[ -f ~/.cache/gamemode ]]; then
+    else
+        banner "archbtw!" 33
+        fastfetch --config examples/13
+    fi
 else
     echo
     if [ -f /bin/qtile ]; then

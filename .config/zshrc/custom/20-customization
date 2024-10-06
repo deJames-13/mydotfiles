@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 # oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # -----------------------------------------------------
-# ZSH_THEME=robbyrussell
+ZSH_THEME=robbyrussell
 
 # -----------------------------------------------------
 # oh-myzsh plugins
@@ -30,7 +30,6 @@ source $ZSH/oh-my-zsh.sh
 # -----------------------------------------------------
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 # -----------------------------------------------------
-source <(fzf --zsh)
 
 # zsh history
 HISTFILE=~/.zsh_history
@@ -47,7 +46,11 @@ setopt appendhistory
 # oh-my-posh promt
 # -----------------------------------------------------
 # Custom Theme
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/tokyonight_storm.omp.json)"
 
+if [[ -f ~/.cache/gamemode ]];then
+else
+    source <(fzf --zsh)
+    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/tokyonight_storm.omp.json)"
+fi
 # Shipped Theme
 # eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/agnoster.omp.json)"

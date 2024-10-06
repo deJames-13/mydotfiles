@@ -1,1 +1,1 @@
-/dej-custom;/dej-custom/colored
+/ml4w-minimal;/ml4w-minimal
